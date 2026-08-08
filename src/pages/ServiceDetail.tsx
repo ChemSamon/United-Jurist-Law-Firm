@@ -4,7 +4,7 @@ import { PageHero } from '../components/common/PageHero';
 import { useLanguage } from '../contexts/LanguageContext';
 import { servicesData } from '../data/servicesData';
 import { feesData } from '../data/feesData';
-import { CheckCircle2, ChevronDown, FileText, ShieldAlert, HelpCircle } from 'lucide-react';
+import { CheckCircle2, ChevronDown, FileText, HelpCircle } from 'lucide-react';
 
 export const ServiceDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -178,13 +178,7 @@ export const ServiceDetail: React.FC = () => {
                 </div>
               )}
 
-              {/* Disclaimer */}
-              <div className="p-4 bg-amber-50 dark:bg-dark-surface rounded-2xl border border-amber-200 dark:border-amber-900/40 text-xs text-amber-900 dark:text-amber-200 flex items-start gap-3">
-                <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <p className="leading-relaxed">
-                  Notice: Information provided on this page is for general informative reference and does not substitute tailored legal advice. Formal representation is subject to a signed Legal Services Agreement.
-                </p>
-              </div>
+
             </div>
 
             {/* Desktop Sticky Table of Contents Sidebar */}

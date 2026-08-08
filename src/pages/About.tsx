@@ -1,44 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { PageHero } from '../components/common/PageHero';
 import { useLanguage } from '../contexts/LanguageContext';
-import { firmConfig } from '../config/firmConfig';
-import type { GalleryImage } from '../components/common/OfficeGalleryLightbox';
-import { OfficeGalleryLightbox } from '../components/common/OfficeGalleryLightbox';
-import { ShieldCheck, Target, Eye, Award, Users, ChevronRight, Maximize2 } from 'lucide-react';
+import { OfficeGallerySection } from '../components/common/OfficeGallerySection';
+import { ShieldCheck, Target, Eye, Award, Users, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const galleryImages: GalleryImage[] = [
-  {
-    id: '1',
-    url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200',
-    caption: { en: 'Executive Meeting Room & Client Advisory Area', km: 'បន្ទប់ប្រជុំប្រតិបត្តិ និងកន្លែងទទួលអតិថិជន' },
-  },
-  {
-    id: '2',
-    url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
-    caption: { en: 'Phnom Penh Office Building Exterior in Sen Sok', km: 'ទិដ្ឋភាពអគារការិយាល័យនៅខណ្ឌសែនសុខ ភ្នំពេញ' },
-  },
-  {
-    id: '3',
-    url: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1200',
-    caption: { en: 'Legal Research & Contract Documentation Workstation', km: 'កន្លែងធ្វើការស្រាវជ្រាវ និងរៀបចំឯកសារកិច្ចសន្យា' },
-  },
-  {
-    id: '4',
-    url: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200',
-    caption: { en: 'Client Legal Signing & Attorney Witnessing Suite', km: 'បន្ទប់ចុះហត្ថលេខា និងធ្វើសាក្សីដោយមេធាវី' },
-  },
-];
-
 export const About: React.FC = () => {
-  const { t, language } = useLanguage();
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
-
-  const openLightbox = (index: number) => {
-    setLightboxIndex(index);
-    setLightboxOpen(true);
-  };
+  const { t } = useLanguage();
 
   return (
     <div className="space-y-0">
@@ -65,14 +33,7 @@ export const About: React.FC = () => {
               </p>
               <p className="text-sm sm:text-base text-brand-textSecondary dark:text-dark-textSecondary leading-relaxed">
                 We take pride in building transparent, responsive, and long-term legal partnerships with Cambodian enterprises, foreign investors, financial institutions, and private individuals.
-              </p>
-
-              <div className="p-4 bg-brand-goldSoft/50 dark:bg-dark-surface rounded-2xl border border-brand-gold/30">
-                <p className="text-xs text-amber-800 dark:text-amber-300 font-mono">
-                  Developer Content Note: {firmConfig.developerNotes.licensing}
-                </p>
-              </div>
-            </div>
+              </p>            </div>
 
             <div className="lg:col-span-6 grid grid-cols-2 gap-4">
               <div className="p-6 bg-brand-bg dark:bg-dark-surface rounded-2xl border border-brand-borderLight dark:border-dark-border space-y-2">
@@ -165,50 +126,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Office Gallery Section with Lightbox */}
-      <section className="py-16 md:py-24 bg-brand-bg dark:bg-dark-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-brand-text dark:text-dark-text">
-              {t('aboutPage.galleryTitle')}
-            </h2>
-            <p className="text-sm text-brand-textSecondary dark:text-dark-textSecondary">
-              {t('aboutPage.gallerySubtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {galleryImages.map((img, idx) => (
-              <div
-                key={img.id}
-                onClick={() => openLightbox(idx)}
-                className="group relative h-64 rounded-2xl overflow-hidden cursor-pointer border border-brand-borderLight dark:border-dark-border shadow-subtle"
-              >
-                <img
-                  src={img.url}
-                  alt={img.caption[language]}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
-                  <p className="text-xs text-white font-medium line-clamp-2">
-                    {img.caption[language]}
-                  </p>
-                  <span className="mt-2 text-[10px] uppercase font-bold text-brand-gold flex items-center gap-1">
-                    <Maximize2 className="w-3 h-3" /> View Photo
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <OfficeGalleryLightbox
-        images={galleryImages}
-        currentIndex={lightboxIndex}
-        isOpen={lightboxOpen}
-        onClose={() => setLightboxOpen(false)}
-        onNavigate={(idx) => setLightboxIndex(idx)}
-      />
+      <OfficeGallerySection />
 
       {/* Leadership CTA Link */}
       <section className="py-16 bg-white dark:bg-dark-card border-t border-brand-borderLight dark:border-dark-border text-center">

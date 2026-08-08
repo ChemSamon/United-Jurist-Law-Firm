@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { PageHero } from '../components/common/PageHero';
 import { useLanguage } from '../contexts/LanguageContext';
 import { insightsData } from '../data/insightsData';
-import { Calendar, Clock, AlertCircle, ArrowLeft } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 
 export const InsightDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -70,13 +70,7 @@ export const InsightDetail: React.FC = () => {
             dangerouslySetInnerHTML={{ __html: localize(article.contentHtml) }}
           />
 
-          {/* Bottom Disclaimer */}
-          <div className="p-4 bg-amber-50 dark:bg-dark-surface rounded-2xl border border-amber-200 dark:border-amber-900/40 text-xs text-amber-900 dark:text-amber-200 flex items-start gap-3">
-            <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-            <p className="leading-relaxed">
-              Disclaimer: This article is provided for general academic and informative purposes only and does not constitute formal legal advice. Readers should seek specific legal counsel regarding their particular matter.
-            </p>
-          </div>
+
 
           <div className="pt-4">
             <Link to="/insights" className="inline-flex items-center gap-2 text-xs font-semibold text-brand-goldDeep dark:text-dark-gold hover:underline">

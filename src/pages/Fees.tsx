@@ -4,7 +4,7 @@ import { PageHero } from '../components/common/PageHero';
 import { useLanguage } from '../contexts/LanguageContext';
 import { feesData } from '../data/feesData';
 import type { FeeItem } from '../types';
-import { Search, Printer, AlertTriangle, X } from 'lucide-react';
+import { Search, Printer, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const Fees: React.FC = () => {
@@ -219,18 +219,7 @@ export const Fees: React.FC = () => {
                 ))}
               </div>
 
-              {/* Fee Disclaimer Alert Box */}
-              <div className="p-6 bg-amber-50 dark:bg-dark-card border border-amber-200 dark:border-amber-900/40 rounded-3xl space-y-3">
-                <div className="flex items-center gap-2 text-amber-900 dark:text-amber-300 font-bold text-sm">
-                  <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0" />
-                  <span>{t('feesPage.disclaimerTitle')}</span>
-                </div>
-                <ul className="space-y-2 text-xs text-amber-900/80 dark:text-amber-200/80 pl-6 list-disc leading-relaxed">
-                  {(t('feesPage.disclaimerPoints') as unknown as string[]).map((point, idx) => (
-                    <li key={idx}>{point}</li>
-                  ))}
-                </ul>
-              </div>
+
             </div>
           </div>
         </div>

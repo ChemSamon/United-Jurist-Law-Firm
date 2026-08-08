@@ -89,16 +89,16 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
 
-              {/* Email Confirmation Card */}
+              {/* Email Card */}
               <div className="bg-white dark:bg-dark-card p-6 rounded-3xl border border-brand-borderLight dark:border-dark-border shadow-card space-y-3">
-                <div className="p-3 w-fit rounded-xl bg-amber-100 dark:bg-dark-surface text-amber-600">
+                <div className="p-3 w-fit rounded-xl bg-brand-goldSoft dark:bg-dark-surface text-brand-gold">
                   <Mail className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-serif font-bold text-brand-text dark:text-dark-text">
-                  Official Email Status
+                  Official Email Address
                 </h3>
-                <p className="text-xs text-amber-800 dark:text-amber-300 font-medium">
-                  {firmConfig.email.displayNotice[language]}
+                <p className="text-xs sm:text-sm font-semibold text-brand-goldDeep dark:text-dark-gold">
+                  info@unitedjuristlaw.com
                 </p>
               </div>
 

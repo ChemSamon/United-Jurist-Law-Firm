@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { PageHero } from '../components/common/PageHero';
 import { useLanguage } from '../contexts/LanguageContext';
 import { teamData } from '../data/teamData';
-import { firmConfig } from '../config/firmConfig';
 import { ShieldCheck, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 export const Team: React.FC = () => {
@@ -76,12 +75,6 @@ export const Team: React.FC = () => {
                   </div>
                 )}
 
-                {/* Developer Mode Feedback Notice */}
-                {firmConfig.flags.developerMode && (
-                  <div className="p-3 bg-amber-50 dark:bg-dark-surface rounded-xl border border-amber-200 dark:border-amber-900/40 text-xs text-amber-800 dark:text-amber-300 font-mono">
-                    Developer Mode: {t('teamPage.missingDetailsNotice')}
-                  </div>
-                )}
 
                 <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-brand-borderLight dark:border-dark-border">
                   <Link

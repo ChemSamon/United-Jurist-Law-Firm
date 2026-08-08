@@ -6,8 +6,8 @@ export function getOrganizationSchema() {
     '@type': 'LegalService',
     name: firmConfig.name.en,
     alternateName: [firmConfig.name.enAlt, firmConfig.name.km],
-    url: 'https://www.unitedjuristlaw.com',
-    logo: 'https://www.unitedjuristlaw.com/_next/image?url=%2Fujl-logo.png&w=640&q=75',
+    // url: 'https://www.unitedjuristlaw.com',
+    logo: 'https://www.unitedjuristlaw.com/logo.png',
     address: {
       '@type': 'PostalAddress',
       streetAddress: firmConfig.address.street,

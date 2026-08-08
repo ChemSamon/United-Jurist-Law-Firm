@@ -106,7 +106,7 @@ export const servicesData: LegalService[] = [
       {
         question: {
           en: 'How long does corporate registration take in Cambodia?',
-          km: 'តើការចុះបញ្ជីក្រុមហ៊ុននៅកម្ពុជាប្រើเวลាយូរប៉ុណ្ណា?',
+          km: 'តើការចុះបញ្ជីក្រុមហ៊ុននៅកម្ពុជាប្រើរយៈពេលយូរប៉ុណ្ណា?',
         },
         answer: {
           en: 'Standard registration through the CamDX single portal system typically takes 2 to 4 weeks depending on government verification processes.',

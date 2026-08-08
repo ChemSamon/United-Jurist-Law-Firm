@@ -7,7 +7,7 @@ interface LogoProps {
 }
 
 export const Logo: React.FC<LogoProps> = ({ variant = 'header', className = '' }) => {
-  const logoUrl = 'https://www.unitedjuristlaw.com/_next/image?url=%2Fujl-logo.png&w=640&q=75';
+  const logoUrl = '/ujl-logo.webp';
 
   return (
     <Link
@@ -17,13 +17,12 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'header', className = '' }
       <img
         src={logoUrl}
         alt="United Jurist Law Firm | ក្រុមហ៊ុនមេធាវី យូណាយធីត ជូរីស"
-        className={`object-contain transition-transform group-hover:scale-[1.02] ${
-          variant === 'footer'
+        className={`object-contain transition-transform group-hover:scale-[1.02] ${variant === 'footer'
             ? 'h-14 sm:h-16 w-auto'
             : variant === 'mobile'
-            ? 'h-10 w-auto'
-            : 'h-12 sm:h-14 w-auto'
-        }`}
+              ? 'h-10 w-auto'
+              : 'h-12 sm:h-14 w-auto'
+          }`}
         loading="eager"
       />
     </Link>

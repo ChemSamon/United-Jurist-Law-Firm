@@ -109,11 +109,7 @@ export const Insights: React.FC = () => {
                       {localize(article.summary)}
                     </p>
 
-                    {article.isDraft && (
-                      <div className="p-2.5 bg-amber-50 dark:bg-dark-surface rounded-xl border border-amber-200 dark:border-amber-900/40 text-[11px] text-amber-800 dark:text-amber-300 font-mono">
-                        {t('insightsPage.draftNotice')}
-                      </div>
-                    )}
+
                   </div>
                 </div>
 

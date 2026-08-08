@@ -8,6 +8,8 @@ import { feesData } from '../data/feesData';
 import { ArrowRight, Phone, ShieldCheck, ChevronRight, Building2, MapPin, Clock, Copy, Check } from 'lucide-react';
 import { copyToClipboard } from '../lib/utils';
 import { Toast } from '../components/common/Toast';
+import { FacebookVideoPlayer } from '../components/common/FacebookVideoPlayer';
+import { OfficeGallerySection } from '../components/common/OfficeGallerySection';
 
 export const Home: React.FC = () => {
   const { t, localize, language } = useLanguage();
@@ -252,10 +254,10 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 18.5 WHY CHOOSE UNITED JURIST */}
+      {/* 18.5 WHY CHOOSE UNITED JURIST WITH FEATURED VIDEO */}
       <section className="py-16 md:py-24 bg-brand-bg dark:bg-dark-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
             <span className="text-xs font-semibold uppercase tracking-wider text-brand-goldDeep dark:text-dark-gold">
               {t('whyChooseUs.badge')}
             </span>
@@ -267,11 +269,19 @@ export const Home: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Featured Video Spotlight Box */}
+          <div className="max-w-4xl mx-auto mb-12 sm:mb-16">
+            <FacebookVideoPlayer
+              facebookUrl="https://www.facebook.com/watch/?v=1460842985077330"
+            />
+          </div>
+
+          {/* 6 Value Pillars Grid (Original Spacious 3-Column Layout) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {(t('whyChooseUs.items') as unknown as { title: string; desc: string }[]).map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white dark:bg-dark-card p-6 rounded-2xl border border-brand-borderLight dark:border-dark-border space-y-3 shadow-subtle"
+                className="bg-white dark:bg-dark-card p-6 rounded-2xl border border-brand-borderLight dark:border-dark-border space-y-3 shadow-subtle hover:border-brand-gold/50 transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-xl bg-brand-goldSoft dark:bg-dark-surface text-brand-gold flex items-center justify-center font-serif font-bold text-lg">
                   0{idx + 1}
@@ -445,11 +455,11 @@ export const Home: React.FC = () => {
             ))}
           </div>
 
-          <p className="text-xs text-amber-700 bg-amber-50 dark:bg-dark-surface dark:text-amber-300 p-4 rounded-xl border border-amber-200 dark:border-amber-900/40 mt-8">
-            {t('feePreview.disclaimerNotice')}
-          </p>
         </div>
       </section>
+
+      {/* OFFICE GALLERY ATMOSPHERE */}
+      <OfficeGallerySection />
 
       {/* 18.10 OFFICE PREVIEW */}
       <section className="py-16 md:py-24 bg-white dark:bg-dark-card border-t border-b border-brand-borderLight dark:border-dark-border">

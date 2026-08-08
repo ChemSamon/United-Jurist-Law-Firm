@@ -44,6 +44,8 @@ export const en = {
     badge: "Firm Values & Standards",
     title: "Why Clients Trust United Jurist",
     subtitle: "Built upon six unwavering pillars of professional Cambodian legal representation.",
+    videoBadge: "Official Video Presentation",
+    videoTitle: "United Jurist Law Firm Introduction",
     items: [
       {
         title: "Deep Cambodian Legal Knowledge",
