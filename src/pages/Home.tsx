@@ -5,8 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { firmConfig } from '../config/firmConfig';
 import { servicesData } from '../data/servicesData';
 import { feesData } from '../data/feesData';
-import { GoldLegalScaleCanvas } from '../components/3d/GoldLegalScaleCanvas';
-import { ArrowRight, Phone, ShieldCheck, FileText, ChevronRight, Building2, MapPin, Clock, Copy, Check } from 'lucide-react';
+import { ArrowRight, Phone, ShieldCheck, ChevronRight, Building2, MapPin, Clock, Copy, Check } from 'lucide-react';
 import { copyToClipboard } from '../lib/utils';
 import { Toast } from '../components/common/Toast';
 
